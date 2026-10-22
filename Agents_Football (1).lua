@@ -38,7 +38,7 @@ local white = Color3.fromRGB(248, 241, 255)
 local muted = Color3.fromRGB(188, 160, 220)
 local panelColor = Color3.fromRGB(15, 7, 29)
 
-local settings = { BallMagnet = false, AutoQB = false, CatchRange = 15 }
+local settings = { BallMagnet = false, AutoQB = false, AutoCatch = false, CatchRange = 15 }
 
 local function make(className, props, target)
     local obj = Instance.new(className)
@@ -377,6 +377,7 @@ heading(mainPage, "✦  MAIN CONTROL")
 toggle(mainPage, "Ball Magnet", "BallMagnet", "Visual setting only.")
 rangeControl(mainPage)
 toggle(mainPage, "Auto QB", "AutoQB", "Visual setting only.")
+toggle(mainPage, "Auto Catch", "AutoCatch", "Visual setting only; catching logic is not connected.")
 
 heading(settingsPage, "⚙  SETTINGS")
 make("TextLabel", {
@@ -397,6 +398,7 @@ make("TextLabel", {
 
 heading(magnetPage, "◈  BALL MAGNET")
 toggle(magnetPage, "Ball Magnet", "BallMagnet", "Visual setting only; no ball movement.")
+toggle(magnetPage, "Auto Catch", "AutoCatch", "Visual setting only; catching logic is not connected.")
 rangeControl(magnetPage)
 
 heading(miscPage, "★  MISC")
